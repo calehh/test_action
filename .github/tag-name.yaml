@@ -1,0 +1,10 @@
+name: Tag Name
+on:
+  push:
+# Env variable
+jobs:
+  push-image-to-docker-hub:  # job name
+    runs-on: ubuntu-latest  # runner name : (ubuntu latest version) 
+    steps:
+    - name: Extract tag name
+      run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}"
